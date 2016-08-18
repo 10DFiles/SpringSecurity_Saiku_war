@@ -26,12 +26,10 @@ public class SaikuSecurityIBMTest extends SpringBootServletInitializer {
 		ConfigurableApplicationContext ctx=SpringApplication.run(SaikuSecurityIBMTest.class, args);
 		EventHolderBean u=ctx.getBean(EventHolderBean.class);
 		u.setlogin();
-		System.err.println("---User SignUp Succesfull-----!!!!");
+		System.err.println("User SignUp Succesfull ~~~~~~~~ !!!!");
 		u.postSchema(); 
-		System.err.println("~~~~~~~~~~~~~~Schema posted successfully-----!!!!");
+		System.err.println("Schema posted successfully ~~~~~~~~~~!!!!");
 		u.postDataSource();
-		System.err.println("------------DataSource posted successfully ---!!!");
-		
-		System.err.println("------------Just The Beginning ---!!!");
+		System.err.println("DataSource posted successfully ~~~~!!!");
 	}
 }
