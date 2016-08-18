@@ -1,0 +1,38 @@
+
+
+
+<div class="layout-theme animated-css" data-header="sticky"
+	data-header-top="200">
+	<div id="wrapper">
+
+		<header class="header" data-ng-include="'app/views/header.html'" ></header>
+	
+ <div class="screen">
+<div ng-show="loading" class="loading">
+		<center>
+			<img src="image/default.gif" style="padding-top: 200px">
+		</center>
+	</div>
+	
+</div> 
+		 <div data-ng-hide=true id="border">
+	<form  id="registerSubmit">
+		userName: <input type="text" name="username" id="username" size="10"  value="admin"/><br>
+		Language: <input type="text" name="language" size="10" id="email" value ="en" /><br>
+		Password: <input type="password" name="password" size="10"
+			id="password" value="admin" /><br>
+		  <input type="submit" name="submit"
+			value="Register" />
+
+	</form>
+</div>
+
+		<footer class="footer wow" data-wow-duration="2s"
+			data-ng-include="'app/views/footer.html'"></footer>
+
+	</div>
+	<!-- end #wrapper -->
+</div>
+<!-- end layout-theme -->
+
+
