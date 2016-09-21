@@ -1,0 +1,55 @@
+<header class="header" data-ng-include="'app/views/loginheader.html'" ></header>
+<div class="container-fluid login">
+  <div class="row login-logo">
+     <img src="app/img/lego.svg" width="48" height="48">
+  </div>
+  <div class="row">
+    <div class="col-md-8 form">
+      <h1 class="title lead">Sign In</h1>
+      <form class="form-horizontal" name="loginform" data-ng-submit="doLogin(loginform,userDetails)">
+          <label for="username">Username:</label>
+          <input type="text" class="form-control" ng-model="$parent.login.email" id="j_username" placeholder="Enter username" name="j_username" >
+          <label for="password">Password:</label>
+          <input type="password" class="form-control" ng-model="$parent.login.password" id="j_password" placeholder="Enter password" type="password" name="j_password">
+          <div class="alert alert-danger" id="loginerror" role="alert">
+            invalid usermame or password
+          </div><br/>
+          <button type="submit" class="btn btn-default submit">Sign in</button>
+      </form>
+      <!-- <div class="social">
+          <a class="facebook" >
+              <i class="fa fa-facebook-square" data-ng-click="fbLogin()" ></i>
+          </a>
+          <a class="google-plus">
+              <i class="fa fa-google-plus-square" data-ng-click="gplusLogin()"></i>
+          </a>
+      </div> -->
+    </div>
+  </div>
+  <br>
+  </br>
+</div>
+<script type="text/javascript">
+		$.extend({
+			  getUrlVars: function(){
+			    var vars = [], hash;
+			    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+			    for(var i = 0; i < hashes.length; i++)
+			    {
+			      hash = hashes[i].split('=');
+			      vars.push(hash[0]);
+			      vars[hash[0]] = hash[1];
+			    }
+			    return vars;
+			  },
+			  getUrlVar: function(name){
+			    return $.getUrlVars()[name];
+			  }
+			});
+		$('#loginerror').hide();
+		if ($.getUrlVar("error") != null) {
+			$('#loginerror').show();
+		}
+	</script>
+
+<footer class="footer wow" data-wow-duration="2s" data-ng-include="'app/views/footer.html'"></footer>

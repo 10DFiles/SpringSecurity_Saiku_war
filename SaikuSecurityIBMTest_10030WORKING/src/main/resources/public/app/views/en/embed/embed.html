@@ -1,0 +1,133 @@
+<!-- <header class="header" data-ng-include="'app/views/header.html'" ></header> -->
+
+	 
+		<div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"> Example
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+    <li data-ng-repeat="x in listOfReports"><a data-ng-click="selected()">
+     {{x}}
+  </a>
+</li>
+  </ul>
+
+</div>
+
+
+<script type="text/javascript">
+console.log("**********************************************************************"); 
+console.log("---in embed");
+var  listOfReports = ["shanthi","sasi","dhina"];
+app.controller("EmbedCtrl", [ '$scope', '$location', '$window','$log','$rootScope',
+                              function($scope, $location, $window,$log,$rootScope) {
+	$scope.init = function  (){
+		console.log("---in embed");
+		$scope. listOfReports = ["shanthi","sasi","dhina"];	
+	}
+	
+	$scope.init();
+	
+/* 
+         	$scope.init function(){
+          		
+          		console.log("in embed controller-----",$rootScope.userData.authorities[0].authority);
+          		if($rootScope.userData.authorities[0].authority == "ROLE_ADMIN"){
+          			console.log("if loop dhina ")
+          	var myClient = new SaikuClient({
+          	    server:"http://localhost:8080/saiku",
+          	    path: "/rest/saiku/embed",
+          	    user: "admin",
+          	    password: "admin"
+          	});
+          		}else{
+          			var myClient = new SaikuClient({
+          			    server:"http://localhost:8080/saiku",
+          			    path: "/rest/saiku/embed",
+          			    user: "user",
+          			    password: "Dhinakar1"
+          			});
+          		}
+
+          	function displayChart(path, htmlDiv){
+          		myClient.execute({
+          			file: path,
+          			htmlObject: "#"+htmlDiv,
+          			render: "chart",
+          			mode: "line",
+          			chartDefinition: {
+          					width: 560,
+          					colors: ['grey','red','blue'],
+          					extensionPoints: {
+          							legend: true,
+          							legendShape: 'circle',
+          							legendSize: {width: '100%'},
+          							legendLabel_textStyle: "#990000",
+          							legendFont: 'normal 11px "Open Sans"'
+          					}
+          			},
+          			zoom: true
+          		});
+          	}
+          	function selected(){
+          		console.log("selected---------------------!!!!");
+          		
+          	}
+          	$(document).ready(function(){
+          		console.log("Hello world")
+          		
+          	});
+          $scope. listOfReports = ["shanthi","sasi","dhina"];
+          		$.get( "http://localhost:8080/saiku/rest/saiku/api/repository?type=saiku,sdb", function( data ) {
+          		 	console.log(data);
+          			console.log(data.length);
+          		 	var response = (data);
+          		 	for(var i=0;i<data.length;i++){
+          		 		console.log("JSON ==>"+data[i].type);
+          				// get reports only under homes
+          		 		if(data[i].type=="FOLDER" && data[i].name=="homes"){
+          				console.log("data[i].repoObjects ==>"+data[i].repoObjects)
+          		 			// for file only we generate the saiku reports
+          					if(data[i].repoObjects && data[i].repoObjects.length>0){
+          						console.log("i am inside"+data[i].repoObjects.length)
+          						var arr = [];
+          						arr = (data[i].repoObjects);
+          						for (var k=0;k<arr.length;k++){
+          							console.log("repo ==>"+arr[k].name);
+          							if(arr[k].name=="home:admin"||arr[k].name=="home:user"){
+          								// retrieve all reports under home:admin folder
+          								console.log("repo ==>"+JSON.stringify(arr[k].repoObjects[0].repoObjects));
+          								// arr[k] is the home:admin folder. iterate all the files
+          								for(var z=0;z<arr[k].repoObjects.length;z++){
+          									// this is now the list of files and folders under homes/home:admin
+          									if(arr[k].repoObjects[z]){
+          										var folderObjects =new Array(arr[k].repoObjects[z].repoObjects);
+          										console.log(arr[k].repoObjects[z].repoObjects.length)
+          										for(var x=0;x<arr[k].repoObjects[z].repoObjects.length;x++){
+          											console.log(x)
+          											if(arr[k].repoObjects[z].repoObjects[x]){
+          												console.log(arr[k].repoObjects[z].repoObjects[x].path)
+          												listOfReports.push(arr[k].repoObjects[z].repoObjects[x].path,"saiku"+x);
+          												//displayChart(arr[k].repoObjects[z].repoObjects[x].path,"saiku"+x);
+          											}
+          										}
+          									}
+          										
+          								}						
+          								
+          								
+          							}
+          						
+          						}
+          					}
+          					
+          		 			
+          		 		}
+          		 	}
+          		});
+
+          };
+          $scope.init(); */
+          }]); 
+</script>
+<!-- <footer class="footer wow" data-wow-duration="2s"
+			data-ng-include="'app/views/footer.html'"></footer> -->

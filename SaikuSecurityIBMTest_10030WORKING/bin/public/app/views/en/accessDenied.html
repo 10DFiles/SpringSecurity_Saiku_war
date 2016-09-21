@@ -1,0 +1,89 @@
+<!-- <div class="layout-theme animated-css" data-header="sticky"
+	data-header-top="200">
+	<div id="wrapper">
+
+		<header class="header" data-ng-include="'app/views/header.html'" ></header>
+
+ <div><h1>
+ Forbidden for this user(This User Role Does not has Access Rights to this page)
+ 
+ </h1>
+ </div>
+
+		<footer class="footer wow" data-wow-duration="2s"
+			data-ng-include="'app/views/footer.html'"></footer>
+
+	</div>
+	end #wrapper
+</div>
+end layout-theme
+ 
+
+</div>
+</div>
+</div> -->
+<!-- <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8" />
+    <title>Error</title>
+    <base href="/"></base>
+    <link rel="stylesheet" href="bootstrap.css"></link>
+    <link rel='stylesheet' href="styles.css"></link>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+</head>
+<body> -->
+<div class="layout-theme animated-css" data-header="sticky"
+	data-header-top="200">
+	<div id="wrapper">
+
+		<header class="header" data-ng-include="'app/views/header.html'" ></header>
+
+    <div class="container-fluid">
+        <!-- <div class="app-label"
+             th:text='${#ctx.getApplicationContext().getBean("appProperties").getLabel()}'
+             th:if='${#ctx.getApplicationContext().getBean("appProperties").hasLabel()}'>
+            change me
+        </div> -->
+        <div class="container">
+            <div style="margin:50px auto; max-width: 650px" class="panel panel-default" th:switch="${status}">
+                <div class="panel-body text-center">
+                    <div class="text-center" style="margin:20px 0 35px 0">
+                        <!-- <img style="display: inline-block; width: 100px; margin-top: 20px" src="img/logo-l.png" alt="Praxis Summit"></img> -->
+                        <h3 style="display:inline-block; vertical-align: bottom; margin-left: 20px">SAIKU</h3>
+                    </div>
+
+                    <h1 th:case="404">
+                        The page does not exist.
+                    </h1>
+                    <h1 th:case="403">
+                        You do not have the permission to access this page.
+                    </h1>
+                    <div th:case="*">
+                        <h1>An error has occurred.</h1>
+                        <p class="lead">Please try again later or contact support.</p>
+                    </div>
+                </div>
+                <div class="panel-footer text-left" th:if="${#ctx.getApplicationContext().getEnvironment().getProperty('error.report-detail')}">
+                    <h3 th:text="${status} + ' ' + ${error}"></h3>
+                    <p th:text="'Message: ' + ${message}"></p>
+                    <p th:if="${exception}" th:text="'Exception: ' + ${exception}"></p>
+                    <p th:if="${trace}" th:text="'Trace: ' + ${#trace}"></p>
+                </div>
+            </div>
+        </div>
+       <!--  <footer class="footer">
+            <div class="container">
+                <div class="footer-version">
+                    <span th:text='${#ctx.getApplicationContext().getBean("appProperties").getVersion()}'>version</span>
+                    <span th:text='${#ctx.getApplicationContext().getBean("appProperties").getBuild()}'>build</span>
+                </div>
+            </div>
+        </footer> -->
+    </div>
+    <footer class="footer wow" data-wow-duration="2s"
+			data-ng-include="'app/views/footer.html'"></footer>
+    
+<!-- </body>
+</html> -->

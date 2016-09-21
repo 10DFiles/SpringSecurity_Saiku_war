@@ -1,0 +1,69 @@
+[
+    {
+        "@class": "org.saiku.repository.RepositoryFolderObject",
+        "type": "FOLDER",
+        "name": "homes",
+        "id": "#/homes",
+        "path": "/homes",
+        "repoObjects": [
+            {
+                "@class": "org.saiku.repository.RepositoryFolderObject",
+                "type": "FOLDER",
+                "name": "home:dhina",
+                "id": "#/homes/home:dhina",
+                "path": "/homes/home:dhina",
+                "repoObjects": [
+                    {
+                        "@class": "org.saiku.repository.RepositoryFileObject",
+                        "type": "FILE",
+                        "name": "house.saiku",
+                        "id": "#/homes/home:dhina/house.saiku",
+                        "path": "/homes/home:dhina/house.saiku",
+                        "acl": [
+                            "READ",
+                            "WRITE",
+                            "GRANT"
+                        ],
+                        "fileType": "saiku"
+                    },
+                    {
+                        "@class": "org.saiku.repository.RepositoryFileObject",
+                        "type": "FILE",
+                        "name": "testMax.saiku",
+                        "id": "#/homes/home:dhina/testMax.saiku",
+                        "path": "/homes/home:dhina/testMax.saiku",
+                        "acl": [
+                            "READ",
+                            "WRITE",
+                            "GRANT"
+                        ],
+                        "fileType": "saiku"
+                    }
+                ],
+                "acl": [
+                    "READ",
+                    "WRITE",
+                    "GRANT"
+                ]
+            },
+            {
+                "@class": "org.saiku.repository.RepositoryFolderObject",
+                "type": "FOLDER",
+                "name": "home:smith",
+                "id": "#/homes/home:smith",
+                "path": "/homes/home:smith",
+                "repoObjects": [],
+                "acl": [
+                    "READ",
+                    "WRITE",
+                    "GRANT"
+                ]
+            }
+        ],
+        "acl": [
+            "READ",
+            "WRITE",
+            "GRANT"
+        ]
+    }
+]
